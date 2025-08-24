@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Chat App</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div id="bg-animated"></div>
+  <div id="chat-container">
+    <header id="chat-header">
+      <h2>💬 ChatBox</h2>
+    </header>
+    <div id="user-info">
+      <input id="username" placeholder="Username" maxlength="16" />
+    </div>
+    <ul id="messages"></ul>
+    <form id="form" action="">
+  <input id="input" autocomplete="off" placeholder="Type a message..." />
+  <button>Send</button>
+  <input type="file" id="media-input" accept="image/*" style="display:none;" />
+  <button type="button" id="media-btn">📎</button>
+  <button type="button" id="video-call-btn" title="Start Video Call" style="margin-left:8px;">📹</button>
+  <div id="video-call-modal" style="display:none;position:fixed;z-index:10001;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.85);justify-content:center;align-items:center;flex-direction:column;">
+    <video id="local-video" autoplay muted playsinline style="width:320px;height:240px;background:#222;border-radius:8px;box-shadow:0 4px 32px #000;"></video>
+    <video id="remote-video" autoplay playsinline style="width:320px;height:240px;background:#222;border-radius:8px;box-shadow:0 4px 32px #000;margin-top:12px;"></video>
+    <button id="end-call-btn" style="margin-top:18px;padding:10px 24px;font-size:1.1em;background:#ff4d4f;color:#fff;border:none;border-radius:6px;cursor:pointer;">End Call</button>
+  </div>
+    </form>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/main.js"></script>
+</body>
+</html>
